@@ -1,13 +1,14 @@
-package com.aditya.list_siswa;
+package com.aditya.list_siswa.feature.detail;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.aditya.list_siswa.model.Mahasiswa;
+import com.aditya.list_siswa.R;
 
-public class hal_detail extends AppCompatActivity {
+public class DetailActivity extends AppCompatActivity {
 
     Mahasiswa mahasiswa;
 
@@ -25,7 +26,5 @@ public class hal_detail extends AppCompatActivity {
         nama.setText(mahasiswa.getNama());
         nomor.setText(mahasiswa.getNohp());
         npm.setText(mahasiswa.getNpm());
-
-
     }
 }

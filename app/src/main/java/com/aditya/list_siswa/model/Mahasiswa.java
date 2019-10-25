@@ -1,4 +1,4 @@
-package com.aditya.list_siswa;
+package com.aditya.list_siswa.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

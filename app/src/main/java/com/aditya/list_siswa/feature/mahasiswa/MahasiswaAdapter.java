@@ -1,4 +1,4 @@
-package com.aditya.list_siswa;
+package com.aditya.list_siswa.feature.mahasiswa;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -9,14 +9,17 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.aditya.list_siswa.model.Mahasiswa;
+import com.aditya.list_siswa.R;
+import com.aditya.list_siswa.feature.detail.DetailActivity;
+
+import java.util.List;
 
 public class MahasiswaAdapter extends RecyclerView.Adapter <MahasiswaAdapter.MahasiswaViewHolder> {
 
 
-    private ArrayList <Mahasiswa> dataList;
-    public MahasiswaAdapter(ArrayList<Mahasiswa> dataList)
-    {
+    private List<Mahasiswa> dataList;
+    public MahasiswaAdapter(List<Mahasiswa> dataList) {
         this.dataList = dataList;
     }
 
@@ -38,17 +41,13 @@ public class MahasiswaAdapter extends RecyclerView.Adapter <MahasiswaAdapter.Mah
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 View itemView = holder.itemView;
 
                 Toast.makeText(itemView.getContext(), "halaman berpindah", Toast.LENGTH_LONG).show();
 
-                Intent myIntent = new Intent(itemView.getContext(), hal_detail.class);
+                Intent myIntent = new Intent(itemView.getContext(), DetailActivity.class);
                 myIntent.putExtra("KEY_DATA", dataList.get(position));
                 itemView.getContext().startActivity(myIntent);
-
-
-
             }
         });
     }
@@ -68,12 +67,7 @@ public class MahasiswaAdapter extends RecyclerView.Adapter <MahasiswaAdapter.Mah
             txtNama = (TextView) itemView.findViewById(R.id.txt_nama_mahasiswa);
             txtNpm = (TextView) itemView.findViewById(R.id.txt_npm_mahasiswa);
             txtNoHp = (TextView) itemView.findViewById(R.id.txt_nohp_mahasiswa);
-
         }
-
-        private void startActivity(Intent myIntent) {
-        }
-
     }
 
 }
